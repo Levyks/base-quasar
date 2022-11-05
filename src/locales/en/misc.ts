@@ -1,0 +1,61 @@
+export default {
+  labels: {
+    username: 'Username',
+    email: 'E-mail',
+    password: 'Password',
+    passwordConfirmation: 'Password confirmation',
+    search: 'Search',
+  },
+  buttons: {
+    view: 'View',
+    edit: 'Edit',
+    create: 'Create',
+    delete: 'Delete',
+    new: 'New',
+    refresh: 'Refresh',
+    tryAgain: 'Try again',
+  },
+  validation: {
+    required: 'This field is required',
+    requiredMultiple: 'At least one option is required',
+    email: 'Invalid e-mail',
+    passwordConfirmation: 'Passwords do not match',
+  },
+  actions: {
+    save: 'Save',
+    cancel: 'Cancel',
+    edit: 'Edit',
+    delete: 'Delete',
+    create: 'Create',
+    send: 'Send',
+    run: 'Run',
+    ok: 'OK',
+  },
+  errors: {
+    unknownError: 'Unknown error',
+    unknownRequestError: 'Unknown request error',
+    http: {
+      400: 'Invalid request',
+      401: 'Unauthorized',
+      403: 'Forbidden',
+      404: 'Not found',
+    },
+  },
+  columns: {
+    id: 'ID',
+    createdAt: 'Created at',
+    updatedAt: 'Updated at',
+    actions: 'Actions',
+  },
+  dialog: {
+    delete: {
+      title: 'Delete record',
+      message: 'Do you really want to delete this record?',
+      loading: 'Deleting record...',
+      success: 'Record deleted successfully',
+      error: 'Error deleting record',
+    },
+  },
+  no: 'No',
+  yes: 'Yes',
+};

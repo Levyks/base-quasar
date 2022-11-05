@@ -1,0 +1,61 @@
+export default {
+  labels: {
+    username: 'Nome de usuário',
+    email: 'E-mail',
+    password: 'Senha',
+    passwordConfirmation: 'Confirmação de senha',
+    search: 'Pesquisar',
+  },
+  buttons: {
+    view: 'Visualizar',
+    edit: 'Editar',
+    create: 'Criar',
+    delete: 'Excluir',
+    new: 'Novo',
+    refresh: 'Atualizar',
+    tryAgain: 'Tentar novamente',
+  },
+  validation: {
+    required: 'Campo obrigatório',
+    requiredMultiple: 'Selecione pelo menos um item',
+    email: 'E-mail inválido',
+    passwordConfirmation: 'Confirmação de senha não confere',
+  },
+  actions: {
+    save: 'Salvar',
+    cancel: 'Cancelar',
+    edit: 'Editar',
+    delete: 'Excluir',
+    create: 'Criar',
+    send: 'Enviar',
+    run: 'Executar',
+    ok: 'OK',
+  },
+  errors: {
+    unknownError: 'Erro desconhecido',
+    unknownRequestError: 'Erro desconhecido ao realizar a requisição',
+    http: {
+      400: 'Requisição inválida',
+      401: 'Não autorizado',
+      403: 'Proibido',
+      404: 'Não encontrado',
+    },
+  },
+  columns: {
+    id: 'ID',
+    createdAt: 'Data de criação',
+    updatedAt: 'Data de atualização',
+    actions: 'Ações',
+  },
+  dialog: {
+    delete: {
+      title: 'Excluir registro',
+      message: 'Deseja realmente excluir o registro?',
+      loading: 'Excluindo registro...',
+      success: 'Registro excluído com sucesso.',
+      error: 'Erro ao excluir registro.',
+    },
+  },
+  no: 'Não',
+  yes: 'Sim',
+};

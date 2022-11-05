@@ -1,0 +1,14 @@
+// app global css in SCSS form
+
+.inherit-color {
+  color: inherit;
+}
+
+.inherit-decoration {
+  text-decoration: inherit;
+}
+
+.seamless-link {
+  @extend .inherit-color;
+  @extend .inherit-decoration;
+}
