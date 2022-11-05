@@ -4,11 +4,7 @@
     :item="(item as ParentMenuItemDefinition)"
     :route="route"
   />
-  <FinalMenuItem
-    v-else
-    :item="(item as FinalMenuItemDefinition | Route)"
-    :route="route"
-  />
+  <FinalMenuItem v-else :item="(item as FinalMenuItemDefinition | Route)" />
 </template>
 
 <script setup lang="ts">

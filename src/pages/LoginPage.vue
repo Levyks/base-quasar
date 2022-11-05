@@ -74,9 +74,7 @@ function getRouteToPush() {
     ? {
         path: goto,
       }
-    : {
-        name: RouteName.Home,
-      };
+    : Route.Home.toLocation();
 }
 
 function onSubmit() {

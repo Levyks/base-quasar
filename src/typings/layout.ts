@@ -1,9 +1,10 @@
 import { Route } from '@/enums/route';
+import { Ref } from 'vue';
 
 type BaseMenuItemDefinition = {
-  labelTranslationKey?: string;
+  label?: Ref<string>;
   cy?: string;
-  descriptionTranslationKey?: string;
+  description?: Ref<string>;
   icon?: string;
 };
 
