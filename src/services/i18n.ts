@@ -1,4 +1,9 @@
+import { computed } from 'vue';
 import { i18n } from '@/boot/i18n';
+
+export function keyTranslatedRef(key: string) {
+  return computed(() => i18n.global.t(key));
+}
 
 export function getEnumFilterListFromSearch<
   Enum extends { [key: number]: string }

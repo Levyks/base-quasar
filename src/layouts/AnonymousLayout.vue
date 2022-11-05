@@ -1,6 +1,10 @@
 <template>
   <MainLayout
-    v-if="routesToShowMainLayout.includes(route.name as RouteName | PartialRouteName) && authStore.isAuthenticated"
+    v-if="
+      typeof route.name === 'string' &&
+      routesToShowMainLayout.includes(route.name) &&
+      authStore.isAuthenticated
+    "
   />
   <q-layout v-else view="hHh lpr fFf">
     <q-header elevated class="bg-secondary">
@@ -19,17 +23,15 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
 
-import { RouteName, PartialRouteName } from '@/enums/RouteName';
+import { Route } from '@/enums/route';
+import { useAuthStore } from '@/stores/auth';
 
 import MainLayout from './MainLayout.vue';
-import HeaderTitle from '@/components//layout/HeaderTitle.vue';
-import LanguageSelect from '@/components//layout/LanguageSelect.vue';
-import { useAuthStore } from '../stores/auth';
+import HeaderTitle from '@/components/layout/HeaderTitle.vue';
+import LanguageSelect from '@/components/layout/LanguageSelect.vue';
 
 const route = useRoute();
 const authStore = useAuthStore();
 
-const routesToShowMainLayout: Array<RouteName | PartialRouteName> = [
-  PartialRouteName.NotFound,
-];
+const routesToShowMainLayout = [Route.NotFound].map((r) => r.name);
 </script>

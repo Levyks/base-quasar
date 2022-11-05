@@ -9,7 +9,7 @@
       <q-item
         clickable
         v-close-popup
-        :to="{ name: RouteName.Profile }"
+        :to="Route.Profile.toLocation()"
         data-cy="profile-button"
       >
         <q-item-section avatar>
@@ -37,13 +37,13 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '@/stores/auth';
-import { RouteName } from '@/enums/RouteName';
+import { Route } from '@/enums/route';
 
 const router = useRouter();
 const authStore = useAuthStore();
 
 function logout() {
   authStore.logout();
-  router.push({ name: RouteName.Login });
+  router.push(Route.Login.toLocation());
 }
 </script>

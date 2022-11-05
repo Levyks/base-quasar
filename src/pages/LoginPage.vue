@@ -55,7 +55,7 @@ import { useRouter } from 'vue-router';
 import { QForm } from 'quasar';
 
 import { useAuthStore } from '@/stores/auth';
-import { RouteName } from '@/enums/RouteName';
+import { Route } from '@/enums/route';
 
 import EmailInput from '@/components/form/EmailInput.vue';
 import PasswordInput from '@/components/form/PasswordInput.vue';

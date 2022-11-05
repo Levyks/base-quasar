@@ -33,11 +33,11 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-import UserDropdown from '@/components//layout/UserDropdown.vue';
-import HeaderTitle from '@/components//layout/HeaderTitle.vue';
-import DrawerMenu from '@/components//layout/DrawerMenu';
-import RouteBreadcrumb from '@/components//layout/RouteBreadcrumb.vue';
-import LanguageSelect from '@/components//layout/LanguageSelect.vue';
+import UserDropdown from '@/components/layout/UserDropdown.vue';
+import HeaderTitle from '@/components/layout/HeaderTitle.vue';
+import DrawerMenu from '@/components/layout/DrawerMenu';
+import RouteBreadcrumb from '@/components/layout/RouteBreadcrumb.vue';
+import LanguageSelect from '@/components/layout/LanguageSelect.vue';
 
 const leftDrawerOpen = ref(false);
 

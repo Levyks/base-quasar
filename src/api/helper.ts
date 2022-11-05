@@ -3,7 +3,7 @@ import qs from 'qs';
 
 import { router } from '@/router';
 import { useAuthStore } from '@/stores/auth';
-import { RouteName } from '@/enums/RouteName';
+import { Route } from '@/enums/route';
 
 import { OverriddenAxiosError, OverriddenAxiosInstance } from '@/typings/axios';
 
@@ -45,10 +45,9 @@ export function axiosInstanceWithInterceptors<T = any>(
           error.config?.redirectOn401)
       ) {
         useAuthStore().logout();
-        router.push({
-          name: RouteName.Login,
-          query: { goto: router.currentRoute.value.fullPath },
-        });
+        router.push(
+          Route.Login.toLocation({ goto: router.currentRoute.value.fullPath })
+        );
       }
 
       throw error;

@@ -1,7 +1,7 @@
 <template>
   <q-toolbar-title>
     <router-link
-      :to="{ name: RouteName.Home }"
+      :to="Route.Home.toLocation()"
       class="q-mr-xs seamless-link"
       active-class=""
       exact-active-class=""
@@ -18,5 +18,5 @@
 <script setup lang="ts">
 import { version, productName } from 'app/package.json';
 import logoReduced from '@/assets/img/The_Answer_to_Life_the_Universe_and.png';
-import { RouteName } from '@/enums/RouteName';
+import { Route } from '@/enums/route';
 </script>

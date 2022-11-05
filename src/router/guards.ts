@@ -1,6 +1,6 @@
 import { NavigationGuardNext, RouteLocationNormalized } from 'vue-router';
 import { useAuthStore } from '@/stores/auth';
-import { RouteName } from '@/enums/RouteName';
+import { Route } from '@/enums/route';
 
 export function onlyAnonymous(
   to: RouteLocationNormalized,
@@ -8,7 +8,7 @@ export function onlyAnonymous(
   next: NavigationGuardNext
 ) {
   const authStore = useAuthStore();
-  if (authStore.isAuthenticated) return next({ name: RouteName.Home });
+  if (authStore.isAuthenticated) return next(Route.Home.toLocation());
   next();
 }
 
@@ -19,6 +19,6 @@ export function onlyAuthenticated(
 ) {
   const authStore = useAuthStore();
   if (!authStore.isAuthenticated)
-    return next({ name: RouteName.Login, query: { goto: to.fullPath } });
+    return next(Route.Login.toLocation({ goto: to.fullPath }));
   next();
 }

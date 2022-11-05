@@ -1,4 +1,4 @@
-import { PartialRouteName, RouteName } from '@/enums/RouteName';
+import { Route } from '@/enums/route';
 
 type BaseMenuItemDefinition = {
   labelTranslationKey?: string;
@@ -8,16 +8,16 @@ type BaseMenuItemDefinition = {
 };
 
 export type FinalMenuItemDefinition = BaseMenuItemDefinition & {
-  route: RouteName;
+  route: Route;
   children?: never;
 };
 
 export type ParentMenuItemDefinition = BaseMenuItemDefinition & {
-  route: PartialRouteName;
+  route: Route;
   children: MenuItemDefinition[];
 };
 
 export type MenuItemDefinition =
   | FinalMenuItemDefinition
   | ParentMenuItemDefinition
-  | RouteName;
+  | Route;

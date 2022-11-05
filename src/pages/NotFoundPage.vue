@@ -24,7 +24,7 @@
           size="lg"
           color="black"
           class="full-width"
-          :to="{ name: RouteName.Home }"
+          :to="Route.Home.toLocation()"
           :label="$t('notFound.goHome')"
           data-cy="not-found-go-home-button"
         />
@@ -34,5 +34,5 @@
 </template>
 
 <script setup lang="ts">
-import { RouteName } from '@/enums/RouteName';
+import { Route } from '@/enums/route';
 </script>

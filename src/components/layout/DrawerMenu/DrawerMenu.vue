@@ -5,9 +5,9 @@
 </template>
 
 <script setup lang="ts">
-import { PartialRouteName, RouteName } from '@/enums/RouteName';
+import { Route } from '@/enums/route';
 import DrawerMenuItem from './DrawerMenuItem.vue';
 import { MenuItemDefinition } from '@/typings/layout';
 
-const items: MenuItemDefinition[] = [RouteName.Home];
+const items: MenuItemDefinition[] = [Route.Home];
 </script>

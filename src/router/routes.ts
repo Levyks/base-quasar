@@ -1,61 +1,44 @@
 import { RouteRecordRaw } from 'vue-router';
-import { computed } from 'vue';
-
-import { i18n } from '@/boot/i18n';
-import { PartialRouteName, RouteName } from '@/enums/RouteName';
 
 import { onlyAnonymous, onlyAuthenticated } from './guards';
+import { Route } from '@/enums/route';
 
 export const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: () => import('layouts/MainLayout.vue'),
+    component: () => import('@/layouts/MainLayout.vue'),
     beforeEnter: [onlyAuthenticated],
     children: [
       {
-        name: RouteName.Home,
+        name: Route.Home.name,
         path: '',
-        component: () => import('pages/IndexPage.vue'),
-        meta: {
-          label: computed(() => i18n.global.t('routes.home')),
-          icon: 'home',
-        },
+        component: () => import('@/pages/IndexPage.vue'),
       },
       {
-        name: RouteName.Profile,
+        name: Route.Profile.name,
         path: 'profile',
-        component: () => import('pages/ProfilePage.vue'),
-        meta: {
-          label: computed(() => i18n.global.t('routes.profile')),
-          icon: 'person',
-        },
+        component: () => import('@/pages/ProfilePage.vue'),
       },
     ],
   },
 
   {
     path: '/:catchAll(.*)*',
-    component: () => import('layouts/AnonymousLayout.vue'),
+    component: () => import('@/layouts/AnonymousLayout.vue'),
     children: [
       {
+        name: Route.Login.name,
         path: '/login',
-        name: RouteName.Login,
-        component: () => import('pages/LoginPage.vue'),
+        component: () => import('@/pages/LoginPage.vue'),
         beforeEnter: [onlyAnonymous],
-        meta: {
-          label: computed(() => i18n.global.t('routes.login')),
-          icon: 'login',
-        },
       },
       // Always leave this as last one
       {
+        name: Route.NotFound.name,
         path: '/:catchAll(.*)*',
-        name: PartialRouteName.NotFound,
-        component: () => import('app/src/pages/NotFoundPage.vue'),
+        component: () => import('@/pages/NotFoundPage.vue'),
         meta: {
-          label: computed(() => i18n.global.t('routes.notFound')),
-          icon: 'error',
-          partial: true,
+          clickable: false,
         },
       },
     ],

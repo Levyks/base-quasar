@@ -16,7 +16,7 @@ import { computed } from 'vue';
 import { RouteLocation } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { FinalMenuItemDefinition } from '@/typings/layout';
-import { RouteName } from '@/enums/RouteName';
+import { Route } from '@/enums/route';
 
 const i18n = useI18n();
 

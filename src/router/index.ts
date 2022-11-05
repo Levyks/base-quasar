@@ -6,20 +6,16 @@ import {
   RouteLocationNormalized,
   Router,
 } from 'vue-router';
-import { Ref } from 'vue';
 import { route } from 'quasar/wrappers';
 
+import { Route } from '@/enums/route';
 import { productName } from 'app/package.json';
 
 import { routes } from './routes';
 
 declare module 'vue-router' {
   interface RouteMeta {
-    label: Ref<string>;
-    description?: Ref<string>;
-    icon?: string;
-    partial?: boolean;
-    cy?: string;
+    clickable?: boolean;
   }
 }
 
@@ -60,8 +56,9 @@ export default route(function (/* { store, ssrContext } */) {
 
 export function updateTitle(route?: RouteLocationNormalized) {
   route = route || router.currentRoute.value;
-  if (route.meta?.label)
-    document.title = `${route.meta.label.value} | ${productName}`;
+  const routeEnum =
+    route.name && Route.fromName(route.name as keyof typeof Route);
+  if (routeEnum) document.title = `${routeEnum.label} | ${productName}`;
   else document.title = productName;
 }
 
